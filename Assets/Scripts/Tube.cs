@@ -23,7 +23,7 @@ public class Tube : MonoBehaviour {
         var player = other.GetComponent<Player>();
 
         if (player != null) {
-            GameManager.Counter++;
+            CounterManager.Counter++;
         }
     }
 

@@ -3,7 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class GameManager : MonoBehaviour {
+public class CounterManager : MonoBehaviour {
     public static int Counter { get; set; }
 
     [SerializeField] private TMP_Text counterText;
