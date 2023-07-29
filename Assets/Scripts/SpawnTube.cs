@@ -8,12 +8,8 @@ public class SpawnTube : MonoBehaviour {
     private float _spawnTimer;
 
     private void Update() {
-        _spawnTimer += Time.deltaTime;
-
-        if (_spawnTimer > waitForSpawn)
-            Spawn();
-
-        Debug.Log($"SpawnTimer: {_spawnTimer}");
+        if (!Player.stopGame)
+            SpawnPipe();
     }
 
     private void Spawn() {
@@ -21,7 +17,10 @@ public class SpawnTube : MonoBehaviour {
         _spawnTimer = 0f;
     }
 
-    public void SetSpawnTimer(float newTimer) {
-        _spawnTimer = newTimer;
+    private void SpawnPipe() {
+        _spawnTimer += Time.deltaTime;
+
+        if (_spawnTimer > waitForSpawn)
+            Spawn();
     }
 }

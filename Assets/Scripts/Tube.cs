@@ -15,9 +15,13 @@ public class Tube : MonoBehaviour {
     }
 
     private void Update() {
-        transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
+        if (Player.stopGame)
+            movementSpeed = 0;
+        else {
+            transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
+            WaitForDeletion();
+        }
 
-        WaitForDeletion();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -49,15 +53,8 @@ public class Tube : MonoBehaviour {
         }
     }
 
-    public float GetMovementSpeed() {
-        return movementSpeed;
-    }
-
-    public void SetMovementSpeed(float newSpeed) {
-        movementSpeed = newSpeed;
-    }
-
-    public void SetDeleteTimer(float newTimer) {
-        _deleteTimer = newTimer;
+    private void SetValues() {
+        movementSpeed = 0;
+        _deleteTimer = 0;
     }
 }

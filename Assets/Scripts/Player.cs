@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 
     private Rigidbody2D _rigidbody2D;
 
+    public static bool stopGame = false;
+
     private void Awake() {
         _rigidbody2D = GetComponent<Rigidbody2D>();
     }
@@ -22,17 +24,10 @@ public class Player : MonoBehaviour {
         var floor = other.collider.name == "BottomBorder" || other.collider.name == "TopBorder";
 
         if (tube != null) {
-            var tubes = FindObjectsByType<Tube>(FindObjectsSortMode.None);
-
-            foreach (var pipe in tubes) {
-                pipe.SetMovementSpeed(0);
-                pipe.SetDeleteTimer(0);
-            }
-                
-            velocity = 0;
+            stopGame = true;
         }
         else if (floor) {
-            velocity = 0;
+            stopGame = true;
         }
     }
 }
