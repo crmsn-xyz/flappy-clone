@@ -1096,6 +1096,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2120873420}
   - component: {fileID: 2120873421}
+  - component: {fileID: 2120873422}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1133,3 +1134,16 @@ MonoBehaviour:
   spawnPoint: {fileID: 1348631857}
   tube: {fileID: 5133005540959127990, guid: 7aec74894d91564409b2c7ccfae3330f, type: 3}
   waitForSpawn: 3
+--- !u!114 &2120873422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120873419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ab63cf37ca3b447ae6f49777d2363c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counterText: {fileID: 459821865}

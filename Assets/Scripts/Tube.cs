@@ -3,6 +3,7 @@ using UnityEngine;
 using Random = System.Random;
 
 public class Tube : MonoBehaviour {
+    [Header("Tube Settings")]
     [SerializeField] private float movementSpeed;
     [SerializeField] private float waitForDelete;
 
@@ -16,6 +17,14 @@ public class Tube : MonoBehaviour {
         transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
 
         WaitForDeletion();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        var player = other.GetComponent<Player>();
+
+        if (player != null) {
+            GameManager.Counter++;
+        }
     }
 
     /// <summary>
