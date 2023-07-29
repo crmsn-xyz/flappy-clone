@@ -3,8 +3,9 @@ using UnityEngine;
 using Random = System.Random;
 
 public class Tube : MonoBehaviour {
-    [Header("Tube Settings")]
-    [SerializeField] private float movementSpeed;
+    [Header("Tube Settings")] [SerializeField]
+    private float movementSpeed;
+
     [SerializeField] private float waitForDelete;
 
     private float _deleteTimer;
@@ -46,5 +47,17 @@ public class Tube : MonoBehaviour {
         if (_deleteTimer > waitForDelete) {
             Destroy(this.gameObject);
         }
+    }
+
+    public float GetMovementSpeed() {
+        return movementSpeed;
+    }
+
+    public void SetMovementSpeed(float newSpeed) {
+        movementSpeed = newSpeed;
+    }
+
+    public void SetDeleteTimer(float newTimer) {
+        _deleteTimer = newTimer;
     }
 }

@@ -12,10 +12,16 @@ public class SpawnTube : MonoBehaviour {
 
         if (_spawnTimer > waitForSpawn)
             Spawn();
+
+        Debug.Log($"SpawnTimer: {_spawnTimer}");
     }
 
     private void Spawn() {
         Instantiate(tube, spawnPoint);
         _spawnTimer = 0f;
+    }
+
+    public void SetSpawnTimer(float newTimer) {
+        _spawnTimer = newTimer;
     }
 }

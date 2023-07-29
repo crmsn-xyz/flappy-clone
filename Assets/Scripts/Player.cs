@@ -16,4 +16,23 @@ public class Player : MonoBehaviour {
             _rigidbody2D.velocity = Vector2.up * velocity;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        var tube = other.collider.GetComponentInParent<Tube>();
+        var floor = other.collider.name == "BottomBorder" || other.collider.name == "TopBorder";
+
+        if (tube != null) {
+            var tubes = FindObjectsByType<Tube>(FindObjectsSortMode.None);
+
+            foreach (var pipe in tubes) {
+                pipe.SetMovementSpeed(0);
+                pipe.SetDeleteTimer(0);
+            }
+                
+            velocity = 0;
+        }
+        else if (floor) {
+            velocity = 0;
+        }
+    }
 }
