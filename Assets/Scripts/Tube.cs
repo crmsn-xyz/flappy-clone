@@ -3,8 +3,9 @@ using UnityEngine;
 using Random = System.Random;
 
 public class Tube : MonoBehaviour {
-    [Header("Tube Settings")]
-    [SerializeField] private float movementSpeed;
+    [Header("Tube Settings")] [SerializeField]
+    private float movementSpeed;
+
     [SerializeField] private float waitForDelete;
 
     private float _deleteTimer;
@@ -14,9 +15,13 @@ public class Tube : MonoBehaviour {
     }
 
     private void Update() {
-        transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
+        if (Player.stopGame)
+            movementSpeed = 0;
+        else {
+            transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
+            WaitForDeletion();
+        }
 
-        WaitForDeletion();
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
@@ -46,5 +51,10 @@ public class Tube : MonoBehaviour {
         if (_deleteTimer > waitForDelete) {
             Destroy(this.gameObject);
         }
+    }
+
+    private void SetValues() {
+        movementSpeed = 0;
+        _deleteTimer = 0;
     }
 }
