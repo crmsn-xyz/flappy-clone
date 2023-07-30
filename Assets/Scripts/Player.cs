@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
     }
 
     private void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space) && stopGame == false) {
             _rigidbody2D.velocity = Vector2.up * velocity;
         }
     }
