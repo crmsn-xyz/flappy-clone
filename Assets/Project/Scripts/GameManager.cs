@@ -7,8 +7,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField] private GameObject TextScreen;
 
     private void Update() {
-        deathScreen.SetActive(Player.stopGame == true);
-
+        deathScreen.SetActive(Player.stopGame);
         TextScreen.SetActive(!Player.startGame);
     }
 
