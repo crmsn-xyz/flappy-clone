@@ -666,6 +666,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7250149213939539526, guid: 7aec74894d91564409b2c7ccfae3330f, type: 3}
+      propertyPath: movementSpeed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7aec74894d91564409b2c7ccfae3330f, type: 3}
 --- !u!1 &1008105166
@@ -918,8 +922,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 0.66}
+  m_Offset: {x: -0.010968955, y: -0.007926881}
+  m_Size: {x: 0.9634405, y: 0.64414895}
   m_Direction: 1
 --- !u!1 &1348631856
 GameObject:
@@ -1133,7 +1137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1348631857}
   tube: {fileID: 5133005540959127990, guid: 7aec74894d91564409b2c7ccfae3330f, type: 3}
-  waitForSpawn: 2.5
+  waitForSpawn: 3
 --- !u!114 &2120873422
 MonoBehaviour:
   m_ObjectHideFlags: 0
