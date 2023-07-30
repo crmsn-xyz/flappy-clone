@@ -4,9 +4,12 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     [SerializeField] private GameObject deathScreen;
+    [SerializeField] private GameObject TextScreen;
 
     private void Update() {
         deathScreen.SetActive(Player.stopGame == true);
+
+        TextScreen.SetActive(!Player.startGame);
     }
 
     public void RestartGame() {

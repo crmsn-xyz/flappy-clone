@@ -8,7 +8,7 @@ public class SpawnTube : MonoBehaviour {
     private float _spawnTimer;
 
     private void Update() {
-        if (!Player.stopGame || !Player.startGame)
+        if (!Player.stopGame || Player.startGame)
             SpawnPipe();
     }
 
