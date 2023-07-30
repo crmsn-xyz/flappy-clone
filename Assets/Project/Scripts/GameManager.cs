@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 
     public void RestartGame() {
         Player.stopGame = false;
+        Player.startGame = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

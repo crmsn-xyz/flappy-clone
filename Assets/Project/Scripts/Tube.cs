@@ -15,7 +15,7 @@ public class Tube : MonoBehaviour {
     }
 
     private void Update() {
-        if (Player.stopGame)
+        if (Player.stopGame || !Player.startGame)
             movementSpeed = 0;
         else {
             transform.position += Vector3.left * (movementSpeed * Time.deltaTime);
