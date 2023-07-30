@@ -883,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8dfd3c715ad6d048a57a2d919290628, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 5
+  velocity: 9
 --- !u!50 &1144453157
 Rigidbody2D:
   serializedVersion: 4
@@ -899,7 +899,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1133,7 +1133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 1348631857}
   tube: {fileID: 5133005540959127990, guid: 7aec74894d91564409b2c7ccfae3330f, type: 3}
-  waitForSpawn: 3
+  waitForSpawn: 2.5
 --- !u!114 &2120873422
 MonoBehaviour:
   m_ObjectHideFlags: 0
